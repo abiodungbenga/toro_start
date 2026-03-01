@@ -2,15 +2,31 @@ import 'package:flutter/material.dart';
 
 class AppColors extends ThemeExtension<AppColors> {
   final Color primary;
-  final Color primary2;
-  final Color textPrimary;
-  final Color textSecondary;
+  final Color primaryDark;
+  final Color primaryLight;
+  final Color accent;
+  final Color scaffoldBg;
+  final Color cardSufaces;
+  final Color secondarySurfacesInputs;
+  final Color dividers;
+  final Color primaryText;
+  final Color secondaryText;
+  final Color mutedText;
+  final Color primaryButtonText;
 
   AppColors({
     required this.primary,
-    required this.primary2,
-    required this.textPrimary,
-    required this.textSecondary,
+    required this.primaryDark,
+    required this.primaryLight,
+    required this.accent,
+    required this.scaffoldBg,
+    required this.cardSufaces,
+    required this.secondarySurfacesInputs,
+    required this.dividers,
+    required this.primaryText,
+    required this.secondaryText,
+    required this.mutedText,
+    required this.primaryButtonText,
   });
   @override
   ThemeExtension<AppColors> copyWith() => this;
@@ -24,18 +40,34 @@ class AppColors extends ThemeExtension<AppColors> {
 
 class MainColors extends AppColors {
   MainColors({
-    super.primary = Colors.white,
-    super.primary2 = const Color(0xFF216dfe),
-    super.textPrimary = const Color(0xFF111827),
-    super.textSecondary = const Color(0xFFB3B3B3),
+    super.primary = const Color(0xFF1A73E8),
+    super.primaryDark = const Color(0xFF1558B0),
+    super.primaryLight = const Color(0xFF4DA3FF),
+    super.accent = const Color(0xFF40CAEC),
+    super.scaffoldBg = const Color(0xFFF8FAFC),
+    super.cardSufaces = const Color(0xFFFFFFFF),
+    super.secondarySurfacesInputs = const Color(0xFFEEF2F7),
+    super.dividers = const Color(0xFFE2E8F0),
+    super.primaryText = const Color(0xFF0F172A),
+    super.secondaryText = const Color(0xFF475569),
+    super.mutedText = const Color(0xFF94A3B8),
+    super.primaryButtonText = const Color(0xFFFFFFFF),
   });
 }
 
 class DarkColor extends AppColors {
   DarkColor({
-    super.primary = const Color(0xFF121212),
-    super.primary2 = const Color(0xFF216dfe),
-    super.textPrimary = Colors.white,
-    super.textSecondary = const Color(0xFFB3B3B3),
+    super.primary = const Color(0xFF1A73E8),
+    super.primaryDark = const Color(0xFF1558B0),
+    super.primaryLight = const Color(0xFF4DA3FF),
+    super.accent = const Color(0xFF40CAEC),
+    super.scaffoldBg = const Color(0xFF121212),
+    super.cardSufaces = const Color(0xFF1E1E1E),
+    super.secondarySurfacesInputs = const Color(0xFF232323),
+    super.dividers = const Color(0xFF353535),
+    super.primaryText = const Color(0xFFF8FAFC),
+    super.secondaryText = const Color(0xFFC7D2FE),
+    super.mutedText = const Color(0xFF94A3B8),
+    super.primaryButtonText = const Color(0xFFFFFFFF),
   });
 }

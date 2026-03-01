@@ -41,7 +41,7 @@ class AppTheme {
       // bodyMedium: TextStyle(fontSize: 18, color: color.primaryText),
       // titleLarge: TextStyle(fontSize: 40, color: color.primaryText),
       titleMedium: TextStyle( fontSize: 18.sp,
-        color: color.textPrimary,
+        color: color.primaryText,
         fontWeight: FontWeight.w700,),
     );
   }
