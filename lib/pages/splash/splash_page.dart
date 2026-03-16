@@ -7,6 +7,12 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
+      body: Column(
+        children: [
+          Text("TEST DEVICE DEFAULT FONT", style: TextStyle(color: Colors.black, fontSize: 30),),
+
+        ],
+      ),
 
     );
   }

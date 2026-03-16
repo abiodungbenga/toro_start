@@ -42,6 +42,7 @@ class AppTheme {
       // titleLarge: TextStyle(fontSize: 40, color: color.primaryText),
       titleMedium: TextStyle( fontSize: 18.sp,
         color: color.primaryText,
+
         fontWeight: FontWeight.w700,),
     );
   }
@@ -52,10 +53,11 @@ class AppTheme {
       extensions: [color],
       scaffoldBackgroundColor: color.primary,
       useMaterial3: false,
+
       brightness: brightness,
 
       // typography: ,
-      fontFamily: AppConstants.latoFont,
+      fontFamily: null,
       // primaryTextTheme: TextTheme(
       //
       // ),
