@@ -4,8 +4,8 @@ import 'package:toro_start/themes/colors.dart';
 import '../constants/app_constants.dart';
 
 class AppTheme {
-  ThemeData get dark => _base(DarkColor(),brightness: Brightness.dark);
-  ThemeData get light => _base(MainColors(),brightness: Brightness.light);
+  ThemeData get dark => _base(DarkColor(), brightness: Brightness.dark);
+  ThemeData get light => _base(MainColors(), brightness: Brightness.light);
 
   static TextTheme create(AppColors color) {
     return TextTheme(
@@ -40,15 +40,24 @@ class AppTheme {
       // bodySmall: TextStyle(fontSize: 12, color: color.primaryText),
       // bodyMedium: TextStyle(fontSize: 18, color: color.primaryText),
       // titleLarge: TextStyle(fontSize: 40, color: color.primaryText),
-      titleMedium: TextStyle( fontSize: 18.sp,
-        color: color.primaryText,
+      titleMedium: TextStyle(
+        fontSize: 20.sp,
+        color: color.white,
         fontFamily: AppConstants.latoFont,
 
-        fontWeight: FontWeight.w700,),
+        fontWeight: FontWeight.w700,
+      ),
+      titleSmall: TextStyle(
+        fontSize: 12.sp,
+        color: color.secondaryText,
+        fontFamily: AppConstants.latoFont,
+
+        fontWeight: FontWeight.w700,
+      ),
     );
   }
 
-  ThemeData _base(AppColors color,{ Brightness? brightness}) {
+  ThemeData _base(AppColors color, {Brightness? brightness}) {
     /// you can set theme of different components provided by flutter here
     return ThemeData(
       extensions: [color],
@@ -56,6 +65,18 @@ class AppTheme {
       useMaterial3: false,
       brightness: brightness,
       // typography: ,
+      colorScheme: ColorScheme(
+        brightness: brightness ?? Brightness.light,
+        primary: color.primary,
+        onPrimary: color.white,
+        secondary: color.secondaryText,
+        onSecondary: Colors.white,
+        error: Colors.red,
+        onError: Colors.red,
+
+        surface: color.secondarySurfacesInputs,
+        onSurface: Colors.white,
+      ),
       fontFamily: AppConstants.latoFont,
       // primaryTextTheme: TextTheme(
       //

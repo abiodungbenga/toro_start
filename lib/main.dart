@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:toro_start/constants/app_constants.dart';
@@ -9,6 +10,16 @@ import 'package:toro_start/themes/app_theme.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await dep.init();
+  await SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.edgeToEdge,
+  );
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.transparent,
+      systemNavigationBarDividerColor: Colors.transparent,
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -22,14 +33,15 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, screenType) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          themeMode: ThemeMode.system,
+          themeMode: ThemeMode.light,
           useInheritedMediaQuery: true,
           darkTheme: appTheme.dark,
+
           theme: appTheme.light,
           // locale: DevicePreview.locale(context),
           // builder: DevicePreview.appBuilder,
           getPages: RouteHelpers.routes,
-          initialRoute: RouteHelpers.initial,
+          initialRoute: RouteHelpers.getInitial(),
           title: AppConstants.appName,
         );
       }

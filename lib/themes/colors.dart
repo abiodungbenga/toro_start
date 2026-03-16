@@ -10,13 +10,17 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color secondarySurfacesInputs;
   final Color dividers;
   final Color primaryText;
+  final Color white;
   final Color secondaryText;
   final Color mutedText;
+  final Color primaryTitle;
   final Color primaryButtonText;
 
   AppColors({
     required this.primary,
     required this.primaryDark,
+    required this.white,
+    required this.primaryTitle,
     required this.primaryLight,
     required this.accent,
     required this.scaffoldBg,
@@ -40,7 +44,9 @@ class AppColors extends ThemeExtension<AppColors> {
 
 class MainColors extends AppColors {
   MainColors({
-    super.primary = const Color(0xFF1A73E8),
+    super.primary = const Color(0xFF3629B7),
+    super.primaryTitle = const Color(0xFF3629B7),
+    super.white =  Colors.white,
     super.primaryDark = const Color(0xFF1558B0),
     super.primaryLight = const Color(0xFF4DA3FF),
     super.accent = const Color(0xFF40CAEC),
@@ -57,7 +63,9 @@ class MainColors extends AppColors {
 
 class DarkColor extends AppColors {
   DarkColor({
-    super.primary = const Color(0xFF1A73E8),
+    super.primary = const Color(0xFF3629B7),
+    super.primaryTitle =  Colors.white,
+    super.white =  Colors.white,
     super.primaryDark = const Color(0xFF1558B0),
     super.primaryLight = const Color(0xFF4DA3FF),
     super.accent = const Color(0xFF40CAEC),

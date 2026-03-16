@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:toro_start/pages/auth/sign_in_page.dart';
+import 'package:toro_start/pages/auth/sign_up_page.dart';
 import '../pages/splash/splash_page.dart';
 
 class RouteHelpers {
@@ -9,6 +11,13 @@ class RouteHelpers {
   static const String onBoarding = "/onBoarding";
 
   static String getOnBoarding() => '$onBoarding';
+
+  static const String signIn = "/sign-in";
+
+  static String getSignIn() => '$signIn';
+  static const String signUp = "/sign-up";
+
+  static String getSignUp() => '$signUp';
 
 
   // static const String onBoardingPageTwo = "/onBoarding-two";
@@ -22,6 +31,16 @@ class RouteHelpers {
     GetPage(
       name: initial,
       page: () => const SplashPage(),
+      transition: Transition.cupertinoDialog,
+    ),
+    GetPage(
+      name: signIn,
+      page: () => const SignInPage(),
+      transition: Transition.cupertinoDialog,
+    ),
+    GetPage(
+      name: signUp,
+      page: () => const SignUpPage(),
       transition: Transition.cupertinoDialog,
     ),
     // GetPage(
