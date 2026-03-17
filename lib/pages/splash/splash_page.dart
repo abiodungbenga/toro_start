@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:toro_start/controllers/auth_controller.dart';
 import 'package:toro_start/routes/routes.dart';
 import 'package:toro_start/themes/extensions/theme_extension.dart';
 import 'package:toro_start/widget/custom_scaffold.dart';
@@ -18,6 +19,8 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin{
   late AnimationController _controller, _secondSlideController;
   late Animation<Offset> _slideAnimation, _secondSlideAnimation;
+  final AuthController _authController = Get.find();
+
 
    void _navigateTo(){
     Get.offNamed(RouteHelpers.getSignUp(),);

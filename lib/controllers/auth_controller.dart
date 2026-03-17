@@ -14,6 +14,8 @@ class AuthController extends GetxController {
   final AuthRepo authRepo;
   AuthController({required this.authRepo});
 
+  Future<bool> get isLoggedIn => authRepo.isLoggedIn;
+
   Mutation<Wallet, CreateWalletEntity> createWallet() {
     return Mutation<Wallet, CreateWalletEntity>(
       key: AppConstants.createWallet,

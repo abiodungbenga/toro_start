@@ -13,6 +13,8 @@ class AuthRepo {
     await storage.write(key: AppConstants.walletAddressKey, value: token);
   }
 
+  Future<bool> get isLoggedIn => storage.containsKey(key: AppConstants.walletAddressKey);
+
 
 
   Future<Wallet> createWallet({String? username, String? password}) => torroClient.createWallet(username: username, password: password);
