@@ -7,6 +7,8 @@ import 'package:toro_start/helpers/dependencies.dart'as dep;
 import 'package:toro_start/routes/routes.dart';
 import 'package:toro_start/themes/app_theme.dart';
 
+import 'helpers/dependencies.dart' as CacheService;
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await dep.init();
@@ -20,6 +22,7 @@ void main() async{
       systemNavigationBarDividerColor: Colors.transparent,
     ),
   );
+  await CacheService.init();
   runApp(const MyApp());
 }
 
@@ -36,7 +39,6 @@ class MyApp extends StatelessWidget {
           themeMode: ThemeMode.light,
           useInheritedMediaQuery: true,
           darkTheme: appTheme.dark,
-
           theme: appTheme.light,
           // locale: DevicePreview.locale(context),
           // builder: DevicePreview.appBuilder,
