@@ -70,6 +70,8 @@ class CustomAppButton extends StatelessWidget {
               ),
             ),
             child: isLoading? loadingWidget??CustomCircularProgressIndicator(
+              width: 10,
+              height: 10,
               color: context.color.white,
             ):child ??
                 AppText(
