@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cached_query_flutter/cached_query_flutter.dart';
 import 'package:get/get.dart';
 import 'package:toro_start/constants/app_constants.dart';
@@ -17,6 +19,8 @@ class AuthController extends GetxController {
           password: data.password,
           username: data.username,
         );
+
+        log("Create wallet response $response");
         return response;
       },
       // reload everything that starts with this key
