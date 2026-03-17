@@ -75,7 +75,7 @@ class AppTheme {
         onError: Colors.red,
 
         surface: color.secondarySurfacesInputs,
-        onSurface: Colors.white,
+        onSurface: color.primaryDark,
       ),
       fontFamily: AppConstants.latoFont,
       // primaryTextTheme: TextTheme(

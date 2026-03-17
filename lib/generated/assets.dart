@@ -16,6 +16,12 @@ class $AssetsImagesGen {
   final AssetGenImage icLogoRemovedBg = const AssetGenImage(
     'assets/images/ic_logo_removed_bg.png',
   );
+  final AssetGenImage toroStartText = const AssetGenImage(
+    'assets/images/toro_start_text.png',
+  );
+  final AssetGenImage toroStartTextRemovebg = const AssetGenImage(
+    'assets/images/toro_start_text-removebg.png',
+  );
 }
 
 class AssetGenImage {

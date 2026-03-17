@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:toro_start/widget/app_text.dart';
 import 'package:toro_start/widget/custom_circular_progress_indicator.dart';
@@ -50,7 +51,11 @@ class CustomAppButton extends StatelessWidget {
                 ? null
                 : isLoading
                     ? null
-                    : onPressed,
+                    : (){
+              Get.focusScope?.unfocus(
+              );
+              onPressed?.call();
+            },
             style: ElevatedButton.styleFrom(
               foregroundColor: foregroundColor ?? context.color.white,
               backgroundColor: backgroundColor ?? context.color.primary,
@@ -70,8 +75,6 @@ class CustomAppButton extends StatelessWidget {
               ),
             ),
             child: isLoading? loadingWidget??CustomCircularProgressIndicator(
-              width: 10,
-              height: 10,
               color: context.color.white,
             ):child ??
                 AppText(

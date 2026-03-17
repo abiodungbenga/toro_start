@@ -11,6 +11,15 @@ class Validator {
     }
     return null;
   }
+  static String? validateConfirmPassword(String password, String confirmPassword ) {
+    if (confirmPassword.trim().isEmpty) {
+      return "Confirm Password cannot be empty";
+    }
+    if (confirmPassword != password) {
+      return "Confirm password and password are not the same";
+    }
+    return null;
+  }
 
 
   static String? validateEmail(String value) {

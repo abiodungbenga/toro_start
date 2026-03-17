@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:sizer/sizer.dart';
 
 import '../constants/app_constants.dart';
 import '../themes/extensions/theme_extension.dart';
@@ -185,13 +187,9 @@ class AppTextField extends StatelessWidget {
                 vertical: 12,
                 horizontal: 12,
               ),
-          errorStyle: TextStyle(
+          errorStyle: context.textTheme.titleSmall?.copyWith(
+            fontSize: 14.sp,
             color: Colors.red,
-            fontWeight: FontWeight.w500,
-            height: 1.6,
-            fontSize: errorSize == 2 ? 14 : errorSize,
-            fontFamily: AppConstants.latoFont,
-            // height: 56,
           ),
           fillColor: fillColor,
           filled: true,
@@ -261,10 +259,12 @@ class AppTextField extends StatelessWidget {
               ),
             ),
             borderSide: BorderSide(
-              color: context.color.secondarySurfacesInputs,
+              color: Colors.red,
               width: 1.0,
             ),
           ),
+          errorMaxLines: 1,
+
 
           errorBorder: OutlineInputBorder(
             borderRadius: BorderRadius.all(

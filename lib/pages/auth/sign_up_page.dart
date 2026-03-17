@@ -26,8 +26,9 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  late TextEditingController _userNameC, _passwordC;
+  late TextEditingController _userNameC, _passwordC, _cPasswordC;
   bool _isPasswordObscure = true;
+  bool _isConfirmPasswordObscure = true;
 
   final GlobalKey<FormState> signUpFormStateKey = GlobalKey<FormState>();
 
@@ -41,6 +42,10 @@ class _SignUpPageState extends State<SignUpPage> {
     setState(() {
       _isPasswordObscure = !_isPasswordObscure;
     });
+  } void _obscureConfirmPassword() {
+    setState(() {
+      _isConfirmPasswordObscure = !_isConfirmPasswordObscure;
+    });
   }
 
   final AuthController _authController = Get.find();
@@ -49,6 +54,7 @@ class _SignUpPageState extends State<SignUpPage> {
   void initState() {
     // TODO: implement initState
     _userNameC = TextEditingController();
+    _cPasswordC = TextEditingController();
     _passwordC = TextEditingController();
     super.initState();
   }
@@ -57,6 +63,7 @@ class _SignUpPageState extends State<SignUpPage> {
   void dispose() {
     // TODO: implement dispose
     _userNameC.dispose();
+    _cPasswordC.dispose();
     _passwordC.dispose();
     super.dispose();
   }
@@ -114,7 +121,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         SizedBox(height: 20),
                         AppTextField(
                           hintText: "User name",
-                          controller: _passwordC,
+                          controller: _userNameC,
                           validator: (val) => Validator.validateName(val??"", "User name"),
                         ),
                         SizedBox(height: 20),
@@ -128,6 +135,24 @@ class _SignUpPageState extends State<SignUpPage> {
 
                             icon: Icon(
                               _isPasswordObscure
+                                  ? CupertinoIcons.eye_fill
+                                  : CupertinoIcons.eye_slash_fill,
+                              size: 18.sp,
+                              color: context.color.primaryText,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        AppTextField(
+                          obscureText: _isConfirmPasswordObscure,
+                          controller: _cPasswordC,
+                          validator: (val) => Validator.validateConfirmPassword(_passwordC.text,val??"",),
+                          hintText: "Confirm Password",
+                          suffix: IconButton(
+                            onPressed: () => _obscureConfirmPassword(),
+
+                            icon: Icon(
+                              _isConfirmPasswordObscure
                                   ? CupertinoIcons.eye_fill
                                   : CupertinoIcons.eye_slash_fill,
                               size: 18.sp,

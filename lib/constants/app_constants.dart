@@ -8,4 +8,6 @@ class AppConstants{
   ///Keys
 
   static String createWallet= 'create-wallet-key';
+  static String importWallet= 'import-wallet-key';
+  static String walletAddressKey= 'wallet-address-key';
 }
